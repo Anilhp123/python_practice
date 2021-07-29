@@ -1,0 +1,15 @@
+import time
+
+def countdown(t):
+    while t:
+        minute, secs = divmod(t, 60)
+        timer = '{:02d}:{:02d}'.format(minute, secs)
+        print(timer, end="\r")
+        time.sleep(1)
+        t -= 1
+
+    print('Time ENDS!!!')
+
+user_time = input("Enter the time in seconds: ")
+
+countdown(int(user_time))
